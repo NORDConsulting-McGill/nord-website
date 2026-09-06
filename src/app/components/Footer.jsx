@@ -1,6 +1,4 @@
 "use client"
-import BrandIcon from './BrandIcon';
-import NordFull from "../../assets/nord_full.svg"
 import Link from 'next/link';
 
 export default function Footer() {
@@ -39,8 +37,12 @@ export default function Footer() {
             <div className="container mx-auto px-6">
                 <div className="grid md:grid-cols-4 gap-8">
                     <div>
-                        <div className="flex items-center space-x-2 mb-4 w-1/3 text-brand-purple">
-                            <NordFull />
+                        <div className="flex items-center mb-4 w-1/2 max-w-[180px]">
+                            <img
+                                src="/icons/nord-full-updated-purple.png"
+                                alt="NORD Consulting"
+                                className="w-full h-auto object-contain"
+                            />
                         </div>
                         <p className="text-gray-600">
                             © 2025 NORD CONSULTING. <br /> <span className='text-sm text-gray-400'>Designed & developed by{" "}

@@ -1,7 +1,6 @@
 // JobCardWithTyping.jsx
 import React, { useState, useEffect } from "react";
 import { Button } from "./Buttons";
-import NordFull from "../../assets/nord_full.svg";
 import JobCard from "./JobCard";
 
 const titles = ["Junior Consultant (10-15)", "Junior Analysts (2-3)"];
@@ -9,7 +8,7 @@ const typingSpeed = 100; // ms per character
 const deletingSpeed = 50; // ms per character
 const pauseTime = 1500; // ms to wait after typing
 
-const JobCardWithTyping = () => {
+const JobCardWithTyping = ({ applyUrl }) => {
     const [titleIndex, setTitleIndex] = useState(0);
     const [displayText, setDisplayText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
@@ -38,7 +37,13 @@ const JobCardWithTyping = () => {
 
     return (
         <JobCard
-            img={<NordFull />}
+            img={
+                <img
+                    src="/icons/nord-full-updated-purple.png"
+                    alt="NORD Consulting"
+                    className="w-full h-full object-contain"
+                />
+            }
             title={
                 <span className="inline-block">
                     {displayText}
@@ -46,12 +51,11 @@ const JobCardWithTyping = () => {
                 </span>
             }
         >
-            {/*  <Button variant="primary" onClick={() => window.open("https://forms.gle/TDpygfDkcUYwmCLD8", "_blank")}>Apply now</Button>*/}
             <Button
-
-                variant="primary" className="pointer-events-none"
+                variant="primary"
+                onClick={() => window.open(applyUrl, '_blank', 'noopener,noreferrer')}
             >
-                Application Closed
+                Apply now
             </Button>
             {/* Tailwind CSS doesn't have a built-in blinking cursor, so add custom style */}
             <style jsx>{`

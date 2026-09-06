@@ -4,10 +4,7 @@ import ServicesSection from "./components/landing/ServiceSection.jsx";
 
 export default function Home() {
   return (
-    <div
-      className="bg-white text-gray-900 overflow-x-hidden"
-      style={{ fontFamily: "Futura, system-ui, sans-serif" }}
-    >
+    <div className="bg-white text-gray-900 overflow-x-hidden">
       <HeroSection />
       <AboutSection />
       <ServicesSection />

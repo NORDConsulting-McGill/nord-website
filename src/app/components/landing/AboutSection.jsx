@@ -1,7 +1,5 @@
 "use client"
-import BrandIcon from '../BrandIcon';
 import StatCard from "../StatCard"
-import NordFull from "../../../assets/nord_full.svg";
 import { Button } from '../Buttons';
 import { FadeInBlur, StaggeredFadeIn } from '../animations/FadeInBlur';
 import SimpleStatsCard from '../SimpleStatsCard';
@@ -26,9 +24,11 @@ export default function AboutSection() {
                     {/*<Button variant={"ghost"} className="w-fit">Learn more →</Button >*/}
                 </div>
                 <div className="flex-1 h-fill bg-brand-purple text-white flex justify-center p-10 items-center object-cover">
-                    <div className='w-2/3 h-2/3'>
-                        <NordFull />
-                    </div>
+                    <img
+                        src="/icons/nord-full-updated-white.png"
+                        alt="NORD Consulting"
+                        className="w-2/3 max-w-md h-auto object-contain"
+                    />
                 </div>
             </div>
 

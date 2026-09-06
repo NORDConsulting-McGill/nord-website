@@ -4,7 +4,6 @@ import Link from "next/link";
 import Clients from "./Clients";
 import Placements from "./Placements";
 import { useState } from "react";
-import NordFull from "../../../assets/nord_full.svg";
 
 
 
@@ -129,8 +128,8 @@ export default function ServicesSection() {
                         ) : (
 
                             /*     <div className="h-full w-full rounded-xl mb-4 flex items-center justify-center">
-                            <div className="flex items-center space-x-2 w-1/2 text-brand-purple">
-                                <NordFull />
+                            <div className="flex items-center w-1/2">
+                                <img src="/icons/nord-full-updated-purple.png" alt="NORD Consulting" className="w-full h-auto object-contain" />
                             </div>
                             </div> */
                             <img src="/photos/sample.png" className="h-full w-full object-cover" />

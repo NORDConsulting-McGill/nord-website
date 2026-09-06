@@ -6,6 +6,12 @@ import Image from 'next/image';
 import ParallaxContainer from '../components/ParallaxBox';
 import { FadeInBlur } from '../components/animations/FadeInBlur';
 
+// Fall 2026 recruitment round
+const APPLICATION_URL = 'https://forms.cloud.microsoft/r/hLkutNDnfj';
+
+const openApplication = () =>
+    window.open(APPLICATION_URL, '_blank', 'noopener,noreferrer');
+
 const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -19,22 +25,27 @@ const Page = () => {
             {/* Hero Section with Parallax */}
             <ParallaxContainer
                 backgroundSrc="/photos/team.png"
-                className="h-[70vh] justify-center flex items-center pt-16"
+                className="h-[70vh] justify-start flex items-center pt-16 bg-brand-purple-dark"
                 speed={0.5} // adjust parallax speed if needed
-                darkOverlay={false}
+                // Desktop: photo sits to the right of a solid purple panel, so nothing
+                // is hidden behind the copy. Mobile: full-bleed photo + scrim instead.
+                backgroundClassName="lg:left-[62%] xl:left-[50%] 2xl:left-[45%]"
+                overlayClassName="bg-gradient-to-b from-brand-purple-dark/75 to-brand-purple-dark/45 lg:hidden"
             >
                 <div className="container px-20 relative z-10 text-left">
-                    <FadeInBlur className='-translate-y-20'>
-                        <h1 className="font-bold mb-6 text-white">
-                            Are you the bright minds we are seeking?
-                        </h1>
-                    </FadeInBlur>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-start mt-6">
-                        <PrimaryButton
-                            className="pointer-events-none"
-                        >
-                            Application Closed
-                        </PrimaryButton>
+                    {/* Capped so the copy stays inside the solid panel and never
+                        runs over the photo. */}
+                    <div className="max-w-lg">
+                        <FadeInBlur className='-translate-y-20'>
+                            <h1 className="font-bold mb-6 text-white">
+                                Are you the bright minds we are seeking?
+                            </h1>
+                        </FadeInBlur>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-start mt-6">
+                            <PrimaryButton onClick={openApplication}>
+                                Apply now →
+                            </PrimaryButton>
+                        </div>
                     </div>
                 </div>
             </ParallaxContainer>
@@ -78,7 +89,9 @@ const Page = () => {
                             →
                         </Button>
                     </div>
-                    <JobCardWithTyping />
+                    <div className="w-full sm:w-1/3 flex items-center justify-center px-4 pb-6 sm:p-10">
+                        <JobCardWithTyping applyUrl={APPLICATION_URL} />
+                    </div>
                 </div>
             </div>
         </div>

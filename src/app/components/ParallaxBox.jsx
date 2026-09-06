@@ -9,6 +9,8 @@ export default function ParallaxContainer({
     speed = 0.3,
     className = '',
     darkOverlay = false, // new prop
+    overlayClassName = '', // custom overlay gradient; takes precedence over darkOverlay
+    backgroundClassName = '', // confines the photo, e.g. to the right of a solid panel
 }) {
     const bgRef = useRef(null);
 
@@ -37,7 +39,7 @@ export default function ParallaxContainer({
             {/* Parallax background */}
             <div
                 ref={bgRef}
-                className="absolute inset-0"
+                className={`absolute inset-0 ${backgroundClassName}`}
                 style={{ willChange: 'transform' }}
             >
                 <Image
@@ -49,9 +51,13 @@ export default function ParallaxContainer({
                 />
             </div>
 
-            {/* Optional dark overlay */}
-            {darkOverlay && (
-                <div className="absolute inset-0 bg-gradient-to-b from-brand-purple-dark/20 to-brand-purple/100 z-1" />
+            {/* Optional overlay */}
+            {(overlayClassName || darkOverlay) && (
+                <div
+                    className={`absolute inset-0 z-1 ${overlayClassName ||
+                        'bg-gradient-to-b from-brand-purple-dark/20 to-brand-purple/100'
+                        }`}
+                />
             )}
 
             {/* Content */}

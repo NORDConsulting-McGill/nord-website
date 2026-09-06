@@ -1,18 +1,25 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import { Button } from "./Buttons"; // adjust path
-import NordFull from "../../assets/nord_full.svg"; // adjust path
 import JobCard from "./JobCard"; // the reusable JobCard we made
 
 const JobCardShuffle = () => {
     const cards = [
         {
-            img: <NordFull />,
+            img: <img
+                src="/icons/nord-full-updated-purple.png"
+                alt="NORD Consulting"
+                className="w-full h-full object-contain"
+            />,
             title: "Junior Consultant (10-15)",
             children: <Button variant="primary">Apply now</Button>,
         },
         {
-            img: <NordFull />,
+            img: <img
+                src="/icons/nord-full-updated-purple.png"
+                alt="NORD Consulting"
+                className="w-full h-full object-contain"
+            />,
             title: "Junior Analysts (2-3)",
             children: <Button variant="primary">Apply now</Button>,
         },

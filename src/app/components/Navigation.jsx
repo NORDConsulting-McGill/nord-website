@@ -61,7 +61,7 @@ export default function Navigation() {
                 <div className="flex items-center gap-10 justify-start h-16">
                     {/* Brand Logo */}
                     <div className="flex items-center">
-                        <BrandIcon />
+                        <BrandIcon progress={progress} />
                     </div>
 
                     {/* Desktop Navigation - Pill Button Style */}
