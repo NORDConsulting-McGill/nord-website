@@ -190,18 +190,25 @@ export default function TeamContent({ teams, availableYears, currentYear }) {
         <div className='bg-white'>
             <ParallaxContainer
                 backgroundSrc="/photos/serious-team-pic.JPG"
-                className="h-[70vh] justify-start flex items-center pt-16"
+                className="h-[70vh] justify-start flex items-center pt-16 bg-brand-purple-dark"
                 speed={0.5}
-                darkOverlay={true}
+                // Desktop: photo sits to the right of a solid purple panel, so nothing
+                // is hidden behind the copy. Mobile: full-bleed photo + scrim instead.
+                backgroundClassName="lg:left-[48%] xl:left-[42%] 2xl:left-[38%]"
+                overlayClassName="bg-gradient-to-b from-brand-purple-dark/75 to-brand-purple-dark/45 lg:hidden"
             >
                 <div className="container px-20 relative z-10 text-left">
-                    <FadeInBlur className='-translate-y-20'>
-                        <h1 className="font-bold mb-6 text-white">
-                            Our Team
-                        </h1>
-                    </FadeInBlur>
-                    <div className="text-white flex flex-col sm:flex-row gap-4 justify-start mt-6">
-                        <p>The minds behind NORD Consulting.</p>
+                    {/* Capped so the copy stays inside the solid panel and never
+                        runs over the photo. */}
+                    <div className="max-w-lg">
+                        <FadeInBlur className='-translate-y-20'>
+                            <h1 className="font-bold mb-6 text-white">
+                                Our Team
+                            </h1>
+                        </FadeInBlur>
+                        <div className="text-white flex flex-col sm:flex-row gap-4 justify-start mt-6">
+                            <p>The minds behind NORD Consulting.</p>
+                        </div>
                     </div>
                 </div>
             </ParallaxContainer>

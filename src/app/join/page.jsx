@@ -51,13 +51,13 @@ const Page = () => {
             </ParallaxContainer>
 
             {/* Info Section */}
-            <div className="p-10 bg-brand-purple">
+            <div className="p-10 bg-white">
                 <div className="flex flex-col sm:flex-row">
                     <div className="flex flex-col text-left sm:w-2/3 w-full p-10 gap-5">
-                        <h2 className="text-4xl lg:text-5xl font-bold text-white">
+                        <h2 className="text-4xl lg:text-5xl font-bold text-brand-navy">
                             Join Us
                         </h2>
-                        <p className="text-white">
+                        <p className="text-gray-700">
                             Formerly known as the McGill Social Business Network
                             (MSBN), NORD Consulting is McGill’s premier pro-bono
                             consulting practice. For over 10 years, we’ve partnered
@@ -66,19 +66,20 @@ const Page = () => {
                             their impact in the Montreal community.
                         </p>
 
-                        <p className="text-white">
+                        <p className="text-gray-700">
                             At NORD, we believe in learning by doing — tackling
                             real-world challenges with innovation, professionalism,
                             and impact. As a member, you’ll gain hands-on consulting
                             experience, professional training, and the chance to make
                             a meaningful difference.
                         </p>
-                        <p className='text-white font-bold'>🗓️ Deadline: September 19th, 11:59 PM
+                        <p className='text-brand-purple-dark font-bold'>🗓️ Deadline: September 19th, 11:59 PM
                         </p>
 
 
                         <Button
                             variant="solid"
+                            className="border border-gray-200 shadow-sm"
                             onClick={() =>
                                 window.open('https://www.instagram.com/nord.mcgill/', '_blank')
                             }
