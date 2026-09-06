@@ -25,7 +25,7 @@ const Page = () => {
             {/* Hero Section with Parallax */}
             <ParallaxContainer
                 backgroundSrc="/photos/team.png"
-                className="h-[70vh] justify-start flex items-center pt-16 bg-brand-purple-dark"
+                className="h-[70vh] justify-start flex items-center pt-16 bg-gradient-to-r from-brand-purple-dark to-brand-purple"
                 speed={0.5} // adjust parallax speed if needed
                 // Desktop: photo sits to the right of a solid purple panel, so nothing
                 // is hidden behind the copy. Mobile: full-bleed photo + scrim instead.
