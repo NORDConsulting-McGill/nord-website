@@ -6,6 +6,10 @@ import { Button } from './Buttons.jsx';
 import Link from "next/link"
 import { usePathname } from 'next/navigation.js';
 
+// Routes whose hero is a light, washed-out photo. The nav sits on top of it, so
+// its content has to be dark from the very top or it would be invisible.
+const LIGHT_HERO_ROUTES = ['/join', '/team'];
+
 export default function Navigation() {
     const [scrollY, setScrollY] = useState(0);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,9 +27,16 @@ export default function Navigation() {
     // Calculate transition progress (0 → 1)
     const progress = Math.min(scrollY / navHeight, 1);
 
+    const hasLightHero = LIGHT_HERO_ROUTES.some(
+        (route) => pathname === route || pathname.startsWith(`${route}/`)
+    );
+    // The bar still fades in on scroll, but over a light hero the logo and links
+    // are dark immediately rather than following the scroll.
+    const contentProgress = hasLightHero ? 1 : progress;
+
     // Interpolate background and text color
     const bgColor = `rgba(255, 255, 255, ${progress})`; // transparent → white
-    const textColor = `rgb(${255 - progress * 255}, ${255 - progress * 255}, ${255 - progress * 255})`; // white → black
+    const textColor = `rgb(${255 - contentProgress * 255}, ${255 - contentProgress * 255}, ${255 - contentProgress * 255})`; // white → black
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -61,7 +72,7 @@ export default function Navigation() {
                 <div className="flex items-center gap-10 justify-start h-16">
                     {/* Brand Logo */}
                     <div className="flex items-center">
-                        <BrandIcon progress={progress} />
+                        <BrandIcon progress={contentProgress} />
                     </div>
 
                     {/* Desktop Navigation - Pill Button Style */}

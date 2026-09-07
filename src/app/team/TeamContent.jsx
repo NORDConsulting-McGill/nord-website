@@ -190,23 +190,21 @@ export default function TeamContent({ teams, availableYears, currentYear }) {
         <div className='bg-white'>
             <ParallaxContainer
                 backgroundSrc="/photos/serious-team-pic.JPG"
-                className="h-[70vh] justify-start flex items-center pt-16 bg-gradient-to-r from-brand-purple-dark to-brand-purple"
+                className="h-[70vh] justify-start flex items-center pt-16 bg-white"
                 speed={0.5}
-                // Desktop: photo sits to the right of a solid purple panel, so nothing
-                // is hidden behind the copy. Mobile: full-bleed photo + scrim instead.
-                backgroundClassName="lg:left-[48%] xl:left-[42%] 2xl:left-[38%]"
-                overlayClassName="bg-gradient-to-b from-brand-purple-dark/75 to-brand-purple-dark/45 lg:hidden"
+                // Washed-out full-bleed photo: the whole team stays visible while the
+                // purple type reads cleanly on top.
+                overlayClassName="bg-gradient-to-b from-white/88 via-white/82 to-brand-purple-light/80"
+                wipeOnHover
             >
                 <div className="container px-20 relative z-10 text-left">
-                    {/* Capped so the copy stays inside the solid panel and never
-                        runs over the photo. */}
-                    <div className="max-w-lg">
+                    <div className="max-w-2xl">
                         <FadeInBlur className='-translate-y-20'>
-                            <h1 className="font-bold mb-6 text-white">
+                            <h1 className="font-bold mb-6 text-brand-purple">
                                 Our Team
                             </h1>
                         </FadeInBlur>
-                        <div className="text-white flex flex-col sm:flex-row gap-4 justify-start mt-6">
+                        <div className="text-brand-purple-dark flex flex-col sm:flex-row gap-4 justify-start mt-6">
                             <p>The minds behind NORD Consulting.</p>
                         </div>
                     </div>

@@ -45,6 +45,7 @@ const buttonVariants = cva(
         variants: {
             variant: {
                 primary: "bg-brand-purple-light text-black shadow-lg justify-center hover:bg-brand-purple hover:text-white hover:shadow-xl hover:-translate-y-0.5",
+                purple: "bg-brand-purple text-white shadow-lg justify-center hover:bg-brand-purple-dark hover:shadow-xl hover:-translate-y-0.5",
                 secondary: "justify-center text-black bg-transparent hover:bg-white hover:text-black",
                 solid: "text-black bg-white hover:bg-gray-50 justify-between",
                 navtrans: "text-foreground bg-transparent hover:underline hover:decoration-brand-purple hover:decoration-dashed",

@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { PrimaryButton, Button } from '../components/Buttons';
+import { Button } from '../components/Buttons';
 import JobCardWithTyping from '../components/TypingJobCard';
 import Image from 'next/image';
 import ParallaxContainer from '../components/ParallaxBox';
@@ -25,26 +25,24 @@ const Page = () => {
             {/* Hero Section with Parallax */}
             <ParallaxContainer
                 backgroundSrc="/photos/team.png"
-                className="h-[70vh] justify-start flex items-center pt-16 bg-gradient-to-r from-brand-purple-dark to-brand-purple"
+                className="h-[70vh] justify-start flex items-center pt-16 bg-white"
                 speed={0.5} // adjust parallax speed if needed
-                // Desktop: photo sits to the right of a solid purple panel, so nothing
-                // is hidden behind the copy. Mobile: full-bleed photo + scrim instead.
-                backgroundClassName="lg:left-[62%] xl:left-[50%] 2xl:left-[45%]"
-                overlayClassName="bg-gradient-to-b from-brand-purple-dark/75 to-brand-purple-dark/45 lg:hidden"
+                // Washed-out full-bleed photo: the whole team stays visible while the
+                // purple type reads cleanly on top.
+                overlayClassName="bg-gradient-to-b from-white/88 via-white/82 to-brand-purple-light/80"
+                wipeOnHover
             >
                 <div className="container px-20 relative z-10 text-left">
-                    {/* Capped so the copy stays inside the solid panel and never
-                        runs over the photo. */}
-                    <div className="max-w-lg">
+                    <div className="max-w-2xl">
                         <FadeInBlur className='-translate-y-20'>
-                            <h1 className="font-bold mb-6 text-white">
+                            <h1 className="font-bold mb-6 text-brand-purple">
                                 Are you the bright minds we are seeking?
                             </h1>
                         </FadeInBlur>
                         <div className="flex flex-col sm:flex-row gap-4 justify-start mt-6">
-                            <PrimaryButton onClick={openApplication}>
+                            <Button variant="purple" onClick={openApplication}>
                                 Apply now →
-                            </PrimaryButton>
+                            </Button>
                         </div>
                     </div>
                 </div>
