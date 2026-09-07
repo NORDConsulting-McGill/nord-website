@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "./Buttons";
 import JobCard from "./JobCard";
 
-const titles = ["Junior Consultant (10-15)", "Junior Analysts (2-3)"];
+const titles = ["Junior Consultant", "Innovation Team"];
 const typingSpeed = 100; // ms per character
 const deletingSpeed = 50; // ms per character
 const pauseTime = 1500; // ms to wait after typing

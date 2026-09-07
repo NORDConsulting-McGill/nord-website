@@ -71,7 +71,7 @@ const Page = () => {
                             experience, professional training, and the chance to make
                             a meaningful difference.
                         </p>
-                        <p className='text-brand-purple-dark font-bold'>🗓️ Deadline: September 19th, 11:59 PM
+                        <p className='text-brand-purple-dark font-bold'>🗓️ Deadline: September 22nd, 11:59 PM ET
                         </p>
 
 
